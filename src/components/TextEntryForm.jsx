@@ -9,15 +9,24 @@ export default function TextEntryForm({
     return (
         <form>
             <label>
-                <textarea></textarea>
-                <span>Text to be analyzed</span>
+                <textarea
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                />
+                <span>Enter text to be analyzed</span>
             </label>
             <label>
-                <input type="checkbox" />
+                <input
+                    type="checkbox"
+                    onChange={() => setExcludeSpaces(!excludeSpaces)}
+                />
                 Exclude Spaces
             </label>
             <label>
-                <input type="checkbox" />
+                <input
+                    type="checkbox"
+                    onChange={() => setCharacterLimit(characterLimit++)}
+                />
                 Set Character Limit
             </label>
         </form>
