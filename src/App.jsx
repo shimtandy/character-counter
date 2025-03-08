@@ -1,4 +1,8 @@
 import "./App.css";
+import TextAttributeCounter from "./components/TextAttributeCounter";
+import TextDensityCounter from "./components/TextDensityCounter";
+import TextEntryForm from "./components/TextEntryForm";
+import TextReadingTime from "./components/TextReadingTime";
 
 function App() {
     return (
@@ -8,33 +12,10 @@ function App() {
             </header>
             <main>
                 <h2>Analyze your text in real-time.</h2>
-                <form>
-                    <label>
-                        <textarea></textarea>
-                        <span>Text to be analyzed</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Exclude Spaces
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Set Character Limit
-                    </label>
-                </form>
-                Approx. reading time: <span>{"< 1 minute"}</span>
-                <ol>
-                    <li>278 Characters</li>
-                    <li>39 Word Count</li>
-                    <li>04 Sentence Count</li>
-                </ol>
-                <section>
-                    <h3>Letter Density</h3>
-                    <ol>
-                        <li>E: 1</li>
-                        <li>D: 20</li>
-                    </ol>
-                </section>
+                <TextEntryForm />
+                <TextReadingTime />
+                <TextAttributeCounter />
+                <TextDensityCounter />
             </main>
         </>
     );
