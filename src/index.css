@@ -42,3 +42,10 @@ body {
   --color-orange-500: #FE8159;
   --color-orange-800: #DA3701;
 }
+
+/* General Styles */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
