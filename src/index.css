@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf');
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+/* Images are replaced elements and so by default will not shrink to fit a parent's width. */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* More legible - especially for dyslexic users. Meets WCAG criteria.
+   Probably too big for headings - set accordingly in those cases. */
+body {
+  line-height: 1.5;
+}
+
+/* Design System */
+
+:root {
+  --color-neutral-900: #12131A;
+  --color-neutral-800: #21222C;
+  --color-neutral-700: #2A2B37;
+  --color-neutral-600: #404254;
+  --color-neutral-200: #E4E4EF;
+  --color-neutral-100: #F2F2F7;
+  --color-neutral-0: #FFFFFF;
+  --color-blue-400: #D3A0FA;
+  --color-blue-500: #C27CF8;
+  --color-yellow-500: #FF9F00;
+  --color-orange-500: #FE8159;
+  --color-orange-800: #DA3701;
+}
