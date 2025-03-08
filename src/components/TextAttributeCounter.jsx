@@ -1,4 +1,4 @@
-export default function TextAttributeCounter() {
+export default function TextAttributeCounter({ text }) {
     return (
         <ol>
             <li>278 Characters</li>

@@ -1,4 +1,4 @@
-export default function TextDensityCounter() {
+export default function TextDensityCounter({ text }) {
     return (
         <section>
             <h3>Letter Density</h3>

@@ -1,4 +1,11 @@
-export default function TextEntryForm() {
+export default function TextEntryForm({
+    text,
+    setText,
+    excludeSpaces,
+    setExcludeSpaces,
+    characterLimit,
+    setCharacterLimit,
+}) {
     return (
         <form>
             <label>
