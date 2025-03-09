@@ -26,7 +26,10 @@ function App() {
                     setCharacterLimit={setCharacterLimit}
                 />
                 <TextReadingTime text={text} />
-                <TextAttributeCounter text={text} />
+                <TextAttributeCounter
+                    text={text}
+                    excludeSpaces={excludeSpaces}
+                />
                 <TextDensityCounter text={text} />
             </main>
         </>
