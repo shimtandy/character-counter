@@ -16,7 +16,7 @@ function App() {
     return (
         <ThemeContext.Provider value={theme}>
             <Header setTheme={setTheme} />
-            <main>
+            <main className="pageMain">
                 <h2>Analyze your text in real-time.</h2>
                 <TextEntryForm
                     text={text}

@@ -1,3 +1,5 @@
+import "./styles/textAttributeCounter.css";
+
 export default function TextAttributeCounter({ text, excludeSpaces }) {
     const sentences = text
         .split(/[.!?]/)
@@ -10,10 +12,19 @@ export default function TextAttributeCounter({ text, excludeSpaces }) {
     }
 
     return (
-        <ol>
-            <li>{characters.length} Characters</li>
-            <li>{words.length} Word Count</li>
-            <li>{sentences.length} Sentence Count</li>
+        <ol className="countsList">
+            <li className="charCount">
+                <span className="countsList__num">{characters.length}</span>{" "}
+                Characters
+            </li>
+            <li className="wordCount">
+                <span className="countsList__num">{words.length}</span> Word
+                Count
+            </li>
+            <li className="sentenceCount">
+                <span className="countsList__num">{sentences.length}</span>{" "}
+                Sentence Count
+            </li>
         </ol>
     );
 }

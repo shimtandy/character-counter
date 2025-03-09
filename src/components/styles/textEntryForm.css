@@ -1,0 +1,9 @@
+.textEntryForm {
+    font-size: var(--font-sz-4)
+}
+
+.textEntryForm textArea {
+    resize: none;
+    width: 100%;
+    font-size: var(--font-sz-3)
+}

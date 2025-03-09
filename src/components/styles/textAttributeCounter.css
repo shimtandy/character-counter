@@ -1,0 +1,35 @@
+.countsList {
+    list-style: none;
+    padding: 0;
+}
+
+.countsList__num {
+    display: block;
+    font-size: var(--font-sz-1-mobile);
+    line-height: 1;
+}
+
+.countsList li {
+    background-position-x: 112%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    padding: 1rem;
+}
+
+.countsList .charCount {
+    background-image: url('./images/pattern-character-count.svg');
+    background-color: var(--color-purple-400);
+}
+
+.countsList .wordCount {
+    background-image: url('./images/pattern-word-count.svg');
+    background-color: var(--color-yellow-500);
+}
+
+.countsList .sentenceCount {
+    background-image: url('./images/pattern-sentence-count.svg');
+    background-color: var(--color-orange-500);
+}

@@ -1,3 +1,5 @@
+import "./styles/textEntryForm.css";
+
 export default function TextEntryForm({
     text,
     setText,
@@ -7,7 +9,7 @@ export default function TextEntryForm({
     setCharacterLimit,
 }) {
     return (
-        <form>
+        <form className="textEntryForm">
             <label>
                 <textarea
                     value={text}
