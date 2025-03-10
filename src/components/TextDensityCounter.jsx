@@ -4,7 +4,10 @@ import "./styles/textDensityCounterStyles.css";
 export default function TextDensityCounter({ text }) {
     let letterCounts = {};
 
+    // TODO: read into iterators
     for (let letter of text.matchAll(/[a-z]/gi)) {
+        letter = letter[0].toUpperCase();
+
         if (letter in letterCounts) {
             letterCounts[letter]++;
         } else {
