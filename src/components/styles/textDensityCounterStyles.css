@@ -1,0 +1,9 @@
+.textDensity h3 {
+    font-size: var(--font-sz-3);
+    margin-bottom: 0.5rem;
+}
+
+.textDensity ol {
+    padding: 0;
+    list-style-type: none;
+}

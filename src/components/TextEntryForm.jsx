@@ -20,14 +20,14 @@ export default function TextEntryForm({
                     Enter text to be analyzed
                 </span>
             </label>
-            <label>
+            <label className="textEntryForm__checkbox">
                 <input
                     type="checkbox"
                     onChange={() => setExcludeSpaces(!excludeSpaces)}
                 />
                 Exclude Spaces
             </label>
-            <label>
+            <label className="textEntryForm__checkbox">
                 <input
                     type="checkbox"
                     onChange={() => setCharacterLimit(characterLimit++)}

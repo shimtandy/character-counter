@@ -1,3 +1,6 @@
+import LetterDensityItem from "./LetterDensityItem";
+import "./styles/textDensityCounterStyles.css";
+
 export default function TextDensityCounter({ text }) {
     let letterCounts = {};
 
@@ -14,14 +17,22 @@ export default function TextDensityCounter({ text }) {
         ([, a], [, b]) => b - a
     );
 
+    const totalLetters = sortedLetters.reduce(
+        (accumulator, currentValue) => accumulator + currentValue[1],
+        0
+    );
+
     return (
-        <section>
+        <section className="textDensity">
             <h3>Letter Density</h3>
             <ol>
                 {sortedLetters.map(([letter, count]) => (
-                    <li key={letter}>
-                        {letter}: {count}
-                    </li>
+                    <LetterDensityItem
+                        key={letter}
+                        letter={letter}
+                        count={count}
+                        countPercent={(100 * count) / totalLetters}
+                    />
                 ))}
             </ol>
         </section>
