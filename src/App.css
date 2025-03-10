@@ -11,3 +11,19 @@
     font-size: var(--font-sz-1-mobile);
     line-height: 1;
 }
+
+@media (min-width: 768px) {
+    .formAndReadingTime {
+        display: grid;
+    }
+
+    .formAndReadingTime > * {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    
+    .formAndReadingTime__readingTime {
+        justify-self: end;
+        align-self: end;
+    }
+}

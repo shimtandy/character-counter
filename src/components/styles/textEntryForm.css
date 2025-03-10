@@ -2,8 +2,39 @@
     font-size: var(--font-sz-4)
 }
 
+.textEntryForm > * {
+    margin-bottom: 0.5rem;
+}
+
+.textEntryForm__label {
+    display: none;
+}
+
 .textEntryForm textArea {
     resize: none;
     width: 100%;
-    font-size: var(--font-sz-3)
+    font-size: var(--font-sz-3);
+    border-radius: 10px;
+    background-color: rgb(from var(--color-neutral-100) r g b / 0.8);
+    padding: 1rem;
+}
+
+.textEntryForm label {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+
+@media (min-width: 768px) {
+    .textEntryForm {
+        display: grid;
+        grid-template-columns: max-content max-content 1fr;
+    }
+
+    .textEntryForm__entryLabel {
+        grid-column: 1 / -1;
+    }
+    
 }

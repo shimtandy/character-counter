@@ -1,4 +1,4 @@
-export default function TextReadingTime({ text }) {
+export default function TextReadingTime({ className, text }) {
     // Roughly the average reading speed of an adult.
     const READING_SPEED = 250; // words per minute
 
@@ -6,9 +6,9 @@ export default function TextReadingTime({ text }) {
     const readingTime = Math.ceil(wordCount / READING_SPEED);
 
     return (
-        <section>
+        <section className={className}>
             Approx. reading time:{" "}
-            {readingTime === 1 ? "< 1 minute." : `< ${readingTime} minutes.`}
+            {readingTime === 1 ? "<1 minute" : `<${readingTime} minutes`}
         </section>
     );
 }

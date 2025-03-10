@@ -18,15 +18,21 @@ function App() {
             <Header setTheme={setTheme} />
             <main className="pageMain">
                 <h2>Analyze your text in real-time.</h2>
-                <TextEntryForm
-                    text={text}
-                    setText={setText}
-                    excludeSpaces={excludeSpaces}
-                    setExcludeSpaces={setExcludeSpaces}
-                    characterLimit={characterLimit}
-                    setCharacterLimit={setCharacterLimit}
-                />
-                <TextReadingTime text={text} />
+                <section className="formAndReadingTime">
+                    <TextEntryForm
+                        className="formAndReadingTime__form"
+                        text={text}
+                        setText={setText}
+                        excludeSpaces={excludeSpaces}
+                        setExcludeSpaces={setExcludeSpaces}
+                        characterLimit={characterLimit}
+                        setCharacterLimit={setCharacterLimit}
+                    />
+                    <TextReadingTime
+                        className="formAndReadingTime__readingTime"
+                        text={text}
+                    />
+                </section>
                 <TextAttributeCounter
                     text={text}
                     excludeSpaces={excludeSpaces}

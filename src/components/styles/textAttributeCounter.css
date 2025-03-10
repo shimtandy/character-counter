@@ -6,6 +6,7 @@
 .countsList__num {
     display: block;
     font-size: var(--font-sz-1-mobile);
+    font-weight: bold;
     line-height: 1;
 }
 
@@ -32,4 +33,15 @@
 .countsList .sentenceCount {
     background-image: url('./images/pattern-sentence-count.svg');
     background-color: var(--color-orange-500);
+}
+
+@media (min-width: 768px) {
+    .countsList {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .countsList li {
+        flex: 1 1 0;
+    }
 }
