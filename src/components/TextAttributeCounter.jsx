@@ -11,18 +11,31 @@ export default function TextAttributeCounter({ text, excludeSpaces }) {
         characters = characters.filter((char) => char !== " ");
     }
 
+    const charCount =
+        characters.length > 0 && characters.length < 10
+            ? `0${characters.length}`
+            : characters.length;
+
+    const wordCount =
+        words.length > 0 && words.length < 10
+            ? `0${words.length}`
+            : words.length;
+
+    const sentenceCount =
+        sentences.length > 0 && sentences.length < 10
+            ? `0${sentences.length}`
+            : sentences.length;
+
     return (
         <ol className="countsList">
             <li className="charCount">
-                <span className="countsList__num">{characters.length}</span>{" "}
-                Characters
+                <span className="countsList__num">{charCount}</span> Characters
             </li>
             <li className="wordCount">
-                <span className="countsList__num">{words.length}</span> Word
-                Count
+                <span className="countsList__num">{wordCount}</span> Word Count
             </li>
             <li className="sentenceCount">
-                <span className="countsList__num">{sentences.length}</span>{" "}
+                <span className="countsList__num">{sentenceCount}</span>{" "}
                 Sentence Count
             </li>
         </ol>
