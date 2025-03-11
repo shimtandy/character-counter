@@ -8,11 +8,17 @@
 
 .pageMain h2 {
     text-align: center;
-    font-size: var(--font-sz-1-mobile);
+    font-size: clampvar(--font-sz-1-mobile);
     line-height: 1;
 }
 
 @media (min-width: 768px) {
+    .pageMain h2 {
+        align-self: center;
+        font-size: var(--font-sz-1);
+        width: 12ch;
+    }
+    
     .formAndReadingTime {
         display: grid;
     }
