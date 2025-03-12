@@ -4,8 +4,7 @@ import TextAttributeCounter from "./components/TextAttributeCounter";
 import TextDensityCounter from "./components/TextDensityCounter";
 import TextEntryForm from "./components/TextEntryForm";
 import TextReadingTime from "./components/TextReadingTime";
-import { useState } from "react";
-import { ThemeContext } from "./contexts/ThemeContext";
+import { useEffect, useState } from "react";
 
 function App() {
     let [text, setText] = useState("");
@@ -13,9 +12,17 @@ function App() {
     let [characterLimit, setCharacterLimit] = useState(0);
     let [theme, setTheme] = useState("light");
 
+    useEffect(() => {
+        if (theme === "light") {
+            document.body.setAttribute("class", "theme-light");
+        } else {
+            document.body.setAttribute("class", "theme-dark");
+        }
+    }, [theme]);
+
     return (
-        <ThemeContext.Provider value={theme}>
-            <Header setTheme={setTheme} />
+        <>
+            <Header theme={theme} setTheme={setTheme} />
             <main className="pageMain">
                 <h2>Analyze your text in real-time.</h2>
                 <section className="formAndReadingTime">
@@ -39,7 +46,7 @@ function App() {
                 />
                 <TextDensityCounter text={text} />
             </main>
-        </ThemeContext.Provider>
+        </>
     );
 }
 

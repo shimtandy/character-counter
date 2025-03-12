@@ -1,7 +1,10 @@
+import { useState } from "react";
 import LetterDensityItem from "./LetterDensityItem";
 import "./styles/textDensityCounterStyles.css";
 
 export default function TextDensityCounter({ text }) {
+    let [showAll, setShowAll] = useState(false);
+
     let letterCounts = {};
 
     // TODO: read into iterators
@@ -28,16 +31,36 @@ export default function TextDensityCounter({ text }) {
     return (
         <section className="textDensity">
             <h3>Letter Density</h3>
-            <ol>
-                {sortedLetters.map(([letter, count]) => (
-                    <LetterDensityItem
-                        key={letter}
-                        letter={letter}
-                        count={count}
-                        countPercent={(100 * count) / totalLetters}
-                    />
-                ))}
-            </ol>
+
+            {showAll && sortedLetters.length > 5 ? (
+                <>
+                    <ol>
+                        {sortedLetters.map(([letter, count]) => (
+                            <LetterDensityItem
+                                key={letter}
+                                letter={letter}
+                                count={count}
+                                countPercent={(100 * count) / totalLetters}
+                            />
+                        ))}
+                    </ol>
+                    <button onClick={() => setShowAll(false)}>Show less</button>
+                </>
+            ) : (
+                <>
+                    <ol>
+                        {sortedLetters.slice(0, 5).map(([letter, count]) => (
+                            <LetterDensityItem
+                                key={letter}
+                                letter={letter}
+                                count={count}
+                                countPercent={(100 * count) / totalLetters}
+                            />
+                        ))}
+                    </ol>
+                    <button onClick={() => setShowAll(true)}>Show more</button>
+                </>
+            )}
         </section>
     );
 }

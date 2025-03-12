@@ -62,3 +62,19 @@ body {
 
   font-family: 'DM Sans'
 }
+
+/* Light/dark theming */
+.theme-dark {
+  --background-color: var(--color-neutral-900);
+  --font-color: var(--color-neutral-100);
+}
+
+.theme-light {
+  --background-color: white;
+  --font-color: var(--color-neutral-700);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
