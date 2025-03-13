@@ -11,6 +11,7 @@
 }
 
 .countsList li {
+    color: var(--color-neutral-900);
     background-position-x: 112%;
     background-repeat: no-repeat;
     background-size: contain;

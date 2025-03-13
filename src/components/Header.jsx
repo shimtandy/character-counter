@@ -21,6 +21,7 @@ export default function Header({ theme, setTheme }) {
             <img src={logoImgSrc} alt="Logo" />
 
             <button
+                className="darkmode-toggle"
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             >
                 <img src={buttonImgSrc} alt="Light theme" />

@@ -65,16 +65,18 @@ body {
 
 /* Light/dark theming */
 .theme-dark {
-  --background-color: var(--color-neutral-900);
+  --background-color-primary: var(--color-neutral-900);
+  --background-color-secondary: var(--color-neutral-700);
   --font-color: var(--color-neutral-100);
 }
 
 .theme-light {
-  --background-color: white;
+  --background-color-primary: white;
+  --background-color-secondary: var(--color-neutral-100);
   --font-color: var(--color-neutral-700);
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--background-color-primary);
   color: var(--font-color);
 }
