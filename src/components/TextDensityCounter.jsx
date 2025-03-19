@@ -44,7 +44,9 @@ export default function TextDensityCounter({ text }) {
                             />
                         ))}
                     </ol>
-                    <button onClick={() => setShowAll(false)}>Show less</button>
+                    <button onClick={() => setShowAll(false)}>
+                        Show less ^
+                    </button>
                 </>
             ) : (
                 <>
@@ -58,7 +60,17 @@ export default function TextDensityCounter({ text }) {
                             />
                         ))}
                     </ol>
-                    <button onClick={() => setShowAll(true)}>Show more</button>
+                    {sortedLetters.length === 0 && (
+                        <p>
+                            No characters found. Start typing to see letter
+                            density.
+                        </p>
+                    )}
+                    {sortedLetters.length > 5 && (
+                        <button onClick={() => setShowAll(true)}>
+                            Show more v
+                        </button>
+                    )}
                 </>
             )}
         </section>
