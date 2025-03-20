@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 function App() {
     let [text, setText] = useState("");
     let [excludeSpaces, setExcludeSpaces] = useState(false);
-    let [characterLimit, setCharacterLimit] = useState(0);
     let [theme, setTheme] = useState("light");
 
     useEffect(() => {
@@ -32,8 +31,6 @@ function App() {
                         setText={setText}
                         excludeSpaces={excludeSpaces}
                         setExcludeSpaces={setExcludeSpaces}
-                        characterLimit={characterLimit}
-                        setCharacterLimit={setCharacterLimit}
                     />
                     <TextReadingTime
                         className="formAndReadingTime__readingTime"

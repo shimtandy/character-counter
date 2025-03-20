@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles/textEntryForm.css";
 
 export default function TextEntryForm({
@@ -6,9 +7,12 @@ export default function TextEntryForm({
     setText,
     excludeSpaces,
     setExcludeSpaces,
-    characterLimit,
-    setCharacterLimit,
 }) {
+    let [characterLimit, setCharacterLimit] = useState(0);
+    let [limitActive, setLimitActive] = useState(false);
+
+    let limitReached = text.length > characterLimit;
+
     return (
         <form className={`textEntryForm ${className}`}>
             <label className="textEntryForm__entryLabel">
@@ -20,6 +24,12 @@ export default function TextEntryForm({
                     Enter text to be analyzed
                 </span>
             </label>
+            {limitReached && (
+                <span>
+                    Limit reached! Your text exceeds {characterLimit}{" "}
+                    characters.
+                </span>
+            )}
             <label className="textEntryForm__checkbox">
                 <input
                     type="checkbox"
@@ -30,10 +40,18 @@ export default function TextEntryForm({
             <label className="textEntryForm__checkbox">
                 <input
                     type="checkbox"
-                    onChange={() => setCharacterLimit(characterLimit++)}
+                    onChange={() => setLimitActive(!limitActive)}
                 />
                 Set Character Limit
             </label>
+            {limitActive && (
+                <label className="textEntryForm__charLimit">
+                    <input
+                        type="number"
+                        onChange={(e) => setCharacterLimit(e.target.value)}
+                    />
+                </label>
+            )}
         </form>
     );
 }

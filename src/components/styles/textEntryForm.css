@@ -51,6 +51,17 @@
     cursor: pointer;
 }
 
+.textEntryForm__charLimit input {
+    background-color: inherit;
+    color: inherit;
+    border: 1px solid var(--color-neutral-600);
+    border-radius: 8px;
+    text-align: center;
+    width: 5ch;
+    padding-block: 0.3rem;
+    font-size: var(--font-sz-4);
+}
+
 .textEntryForm__checkbox input::before {
     content: "";
     background-color: var(--color-neutral-900);
